@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "marus25.cortex-debug",
+        "cschlosser.doxdocgen",
+        "shd101wyy.markdown-preview-enhanced",
+        "davidanson.vscode-markdownlint",
+        "gruntfuggly.todo-tree",
+        "tomoki1207.pdf",
+        "twxs.cmake",
+        "josetr.cmake-language-support-vscode",
+        "ms-vscode.cmake-tools",
+        "cheshirekow.cmake-format",
+        "hediet.vscode-drawio",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}

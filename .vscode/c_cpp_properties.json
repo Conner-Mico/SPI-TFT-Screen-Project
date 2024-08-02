@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "compileCommands": "${workspaceFolder}/build_debug/compile_commands.json",
+            "name": "Linux-Debug",
+	        "includePath": [
+		        "${workspaceFolder}/**"
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "c23",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}
