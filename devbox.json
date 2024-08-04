@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.10.5/.schema/devbox.schema.json",
+  "packages": [
+    "gcc-arm-embedded-13@13.2.rel1",
+    "gcc13@latest",
+    "gnumake@4.4.1",
+    "cmake@3.29.2",
+    "cmake-format@0.6.13",
+    "ccache@4.9.1",
+    "ninja@1.11.1",
+    "clang-tools_18@18.1.7",
+    "plantuml@1.2024.5",
+    "graphviz@10.0.1",
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!'",
+    ],
+    "scripts": {
+      "make": [
+        "make $@"
+      ],
+      "regenerate": [
+        "echo Building CMake Files...",
+        "make removebuild",
+        "make generate",
+        "echo Building elf file...",
+        "make build",
+      ],
+      "format-check": [
+        "make format-check",
+      ],
+      "clang-tidy": [
+        "make clang-tidy",
+      ],
+      "tests": [
+        "set -e pipefail",
+        "exit $(ceedling test:all 2>&1 | grep 'FAILED:' | cut -d':' -f2)",
+      ],
+      "plantuml": [
+        "plantuml -picoweb",
+      ],
+    },
+  },
+}
