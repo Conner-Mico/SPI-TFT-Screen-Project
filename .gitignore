@@ -1,0 +1,51 @@
+# Build
+build_debug/
+build_test/
+build*
+
+# Visual Studio Code
+.vscode/.cortex-*
+.vscode/tasks.json
+.vscode/launch.json
+
+# GIT
+.git.active
+
+# LaTex
+*.tex
+
+# xml
+docs/**/*.xml
+
+# PDFs
+*.pdf
+!docs/datasheets/*.pdf
+!docs/datasheets/flash/*.pdf
+!docs/schematics/*.pdf
+!docs/proxtalk/*.pdf
+
+# Word Documents
+*.docx
+!docs/proxtalk/docs_src/*.docx
+
+# Pictures
+*.png
+!_ota_discovery/images/*.png
+!_ota_discovery/diagrams/*.png
+
+# Sourcetrail binary files
+*.srctrldb
+*.srctrlbm
+
+# Mac OS
+*.DS_Store
+
+# clang configs
+.clang*
+
+# devbox
+devbox.lock
+
+src/app/Makefile
+drivers/HAL/Makefile
+drivers/LL/Makefile

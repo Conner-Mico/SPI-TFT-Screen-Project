@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/../../cmsis/Include -I/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/../../system -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mthumb -DSTM32L476xx -x assembler-with-cpp -O0 -g3 -DDEBUG -Wall -Wextra -Wno-missing-field-initializers -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-unused-but-set-variable -funsigned-char -o CMakeFiles/application.dir/__/__/startup/startup_stm32l476xx.s.obj -c /home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/startup/startup_stm32l476xx.s",
+  "file": "/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/startup/startup_stm32l476xx.s"
+},
+{
+  "directory": "/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/../../cmsis/Include -I/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/../../system -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mthumb -DSTM32L476xx -mfloat-abi=softfp -fdiagnostics-color=always -fdata-sections -ffunction-sections --specs=nano.specs -O0 -g3 -DDEBUG -Wall -Wextra -Wno-missing-field-initializers -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-unused-but-set-variable -funsigned-char -std=gnu2x -o CMakeFiles/application.dir/__/__/system/system_stm32l4xx.c.obj -c /home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/system/system_stm32l4xx.c",
+  "file": "/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/system/system_stm32l4xx.c"
+},
+{
+  "directory": "/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app",
+  "command": "/usr/bin/arm-none-eabi-gcc  -I/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/../../cmsis/Include -I/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/../../system -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mthumb -DSTM32L476xx -mfloat-abi=softfp -fdiagnostics-color=always -fdata-sections -ffunction-sections --specs=nano.specs -O0 -g3 -DDEBUG -Wall -Wextra -Wno-missing-field-initializers -Wno-unused-variable -Wno-unused-parameter -Wno-unused-function -Wno-unused-but-set-variable -funsigned-char -std=gnu2x -o CMakeFiles/application.dir/main.c.obj -c /home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/main.c",
+  "file": "/home/conner/Desktop/personal-projects/SPI-TFT-Screen-Project/src/app/main.c"
+}
+]
