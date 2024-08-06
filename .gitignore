@@ -47,3 +47,5 @@ docs/**/*.xml
 devbox.lock
 
 src/app/Makefile
+drivers/HAL/Makefile
+drivers/LL/Makefile
