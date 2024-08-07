@@ -7,11 +7,11 @@
         {
             "name": "TFT Project Debug",
             "cwd": "${workspaceFolder}",
-            "executable": "./bin/executable.elf",
+            "executable": "./build_debug/src/app/application.elf",
             "request": "launch",
             "type": "cortex-debug",
             "runToEntryPoint": "main",
-            "servertype": "jlink"
+            "servertype": "stlink"
         }
     ]
 }

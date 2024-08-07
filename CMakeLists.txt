@@ -32,6 +32,12 @@ add_library(freertos_config INTERFACE)
 target_include_directories(freertos_config
                            INTERFACE "${CMAKE_SOURCE_DIR}/src/app/config")
 
+# Prefer .elf extension for the ELF file output by the linker. By default, CMake
+# applies no extension for executable targets.
+if(CMAKE_CROSSCOMPILING)
+  set(CMAKE_EXECUTABLE_SUFFIX ".elf")
+endif()
+
 set(APP_NAME application)
 set(APP_LIB_NAME applicationLib)
 set(APP_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src/app)
@@ -42,11 +48,7 @@ add_subdirectory(drivers/HAL)
 add_subdirectory(drivers/LL)
 
 
-# Prefer .elf extension for the ELF file output by the linker. By default, CMake
-# applies no extension for executable targets.
-if(CMAKE_CROSSCOMPILING)
-  set(CMAKE_EXECUTABLE_SUFFIX ".elf")
-endif()
+
 
 # Generate the memory map from the linker script
 cmake_path(SET MEM_MAP_TOOL NORMALIZE
