@@ -44,7 +44,10 @@ target_sources(
   ${APP_NAME}
   PRIVATE ../../startup/startup_stm32l476xx.s
           ../../system/system_stm32l4xx.c
+          ../../drivers/HAL/stm32l4xx_hal_gpio.c
           main.c
+          application/application.c
+          LED/LED.c
 )
 
 target_link_options(
@@ -59,4 +62,8 @@ target_include_directories(
   PRIVATE
     ../../cmsis/include/
     ../../system/
+    config/
+    ../../drivers/HAL/
+    application/
+    LED/
 )
