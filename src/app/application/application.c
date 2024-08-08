@@ -1,3 +1,4 @@
+#include "LED_types.h"
 #include "clock.h"
 #include "application.h"
 #include "LED.h"
@@ -16,18 +17,17 @@ static GPIO_InitTypeDef blinkLEDPinInit = {
 void applicationInit(void)
 {
     HAL_Init();
-    systemClockConfig();
-    LEDinit();
-    
+    systemClocksConfig();
+    LEDsInit();
 }
 
 // application run function definition
 void applicationRun(void)
 {
     while (1) {
-        LEDon();
+        LEDOn(LED_ID_BLINKY);
         HAL_Delay(500);
-        LEDoff();
+        LEDOff(LED_ID_BLINKY);
         HAL_Delay(500);
     }
 }
