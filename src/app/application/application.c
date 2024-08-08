@@ -17,6 +17,7 @@ void applicationInit(void)
 {
     HAL_Init();
     systemClockConfig();
+    LEDinit();
     
 }
 
@@ -25,5 +26,8 @@ void applicationRun(void)
 {
     while (1) {
         LEDon();
+        HAL_Delay(500);
+        LEDoff();
+        HAL_Delay(500);
     }
 }
