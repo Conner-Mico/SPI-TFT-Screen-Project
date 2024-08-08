@@ -1,10 +1,22 @@
+#include "clock.h"
 #include "application.h"
-#include "stm32l476xx.h"
-#include "stm32l4xx_hal_gpio.h"
+#include "stm32l4xx_hal.h"
 
 // Do a struct initialization with the approriate values for the pin
 static GPIO_InitTypeDef blinkLEDPinInit;
 
-// application init function declaration
+// application init function definition
+void applicationInit(void)
+{
+    HAL_Init();
+    systemClockConfig();
+    
+}
 
-// application run function declaration
+// application run function definition
+void applicationRun(void)
+{
+    while (1) {
+    
+    }
+}
