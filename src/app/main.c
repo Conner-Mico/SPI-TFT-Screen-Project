@@ -1,10 +1,10 @@
-
+#include "application.h"
 
 
 int main(void)
 {
-    while (1) {
+    applicationInit();
+    applicationRun();
     
-    }
     return 0;
 }
