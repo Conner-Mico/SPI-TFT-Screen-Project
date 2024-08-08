@@ -44,12 +44,15 @@ target_sources(
   ${APP_NAME}
   PRIVATE ../../startup/startup_stm32l476xx.s
           ../../system/system_stm32l4xx.c
+          ../../drivers/HAL/stm32l4xx_it.c
           ../../drivers/HAL/stm32l4xx_hal_cortex.c
           ../../drivers/HAL/stm32l4xx_hal_pwr_ex.c
           ../../drivers/HAL/stm32l4xx_hal_rcc.c
           ../../drivers/HAL/stm32l4xx_hal_flash.c
           ../../drivers/HAL/stm32l4xx_hal_gpio.c
           ../../drivers/HAL/stm32l4xx_hal.c
+          utility/utility.c
+          utility/assert.c
           main.c
           system/clock/clock.c
           application/application.c
@@ -70,6 +73,8 @@ target_include_directories(
     ../../system/
     ../../drivers/HAL/
     config/
+    utility/
+    gpio/
     system/clock/
     application/
     LED/
