@@ -66,7 +66,6 @@ list(
     stm32l4xx_hal_gpio.c
     stm32l4xx_hal_comp.c
     stm32l4xx_hal_smartcard.c
-    stm32l4xx_it.c
     stm32l4xx_hal_dac.c
     stm32l4xx_hal_adc_ex.c
     stm32l4xx_hal_i2c_ex.c
@@ -89,7 +88,6 @@ list(
     ../../cmsis/include/
     ../../system/
     ../../src/app/config/
-    
 )
 
 add_library(HAL STATIC ${HAL_SOURCE})
