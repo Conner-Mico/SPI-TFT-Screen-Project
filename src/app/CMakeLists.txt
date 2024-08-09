@@ -40,17 +40,18 @@ target_compile_options(
           -Wno-unused-but-set-variable
           -funsigned-char)
 
+target_link_libraries(
+  ${APP_NAME}
+  m
+  freertos_kernel
+  HAL
+  LL
+)
+
 target_sources(
   ${APP_NAME}
   PRIVATE ../../startup/startup_stm32l476xx.s
           ../../system/system_stm32l4xx.c
-          ../../drivers/HAL/stm32l4xx_it.c
-          ../../drivers/HAL/stm32l4xx_hal_cortex.c
-          ../../drivers/HAL/stm32l4xx_hal_pwr_ex.c
-          ../../drivers/HAL/stm32l4xx_hal_rcc.c
-          ../../drivers/HAL/stm32l4xx_hal_flash.c
-          ../../drivers/HAL/stm32l4xx_hal_gpio.c
-          ../../drivers/HAL/stm32l4xx_hal.c
           utility/utility.c
           utility/assert.c
           main.c
@@ -69,9 +70,6 @@ target_link_options(
 target_include_directories(
   ${APP_NAME}
   PRIVATE
-    ../../cmsis/include/
-    ../../system/
-    ../../drivers/HAL/
     config/
     utility/
     gpio/
