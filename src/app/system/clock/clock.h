@@ -2,7 +2,10 @@
 #define CLOCK_H
 
 #include <stdbool.h>
+#include "stm32l4xx_hal_def.h"
+#include "gpio_types.h"
 
-bool systemClockConfig(void);
+HAL_StatusTypeDef systemClocksConfig(void);
+void RCC_GPIO_ClockInit(const GPIOx_t GPIOx);
 
 #endif

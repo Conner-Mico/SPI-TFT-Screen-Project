@@ -1,12 +1,11 @@
 #ifndef LED_H
 #define LED_H
 
-#include "stm32l4xx_hal_gpio.h"
+#include "LED_types.h"
 
-// LED init function declaration
-
-// LED on function declaration
-
-// LED off function declaration
+void LEDsInit(void);
+void LEDOn(const LEDID_t ID);
+void LEDOff(const LEDID_t ID);
+void LEDToggle(const LEDID_t ID);
 
 #endif
