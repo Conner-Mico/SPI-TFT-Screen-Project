@@ -52,6 +52,7 @@ target_sources(
   ${APP_NAME}
   PRIVATE ../../startup/startup_stm32l476xx.s
           ../../system/system_stm32l4xx.c
+          ../../drivers/HAL/stm32l4xx_it.c
           utility/utility.c
           utility/assert.c
           main.c

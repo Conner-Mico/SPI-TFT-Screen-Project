@@ -17,6 +17,6 @@ void applicationRun(void)
 {
     while (1) {
         LEDToggle(LED_ID_BLINKY);
-        HAL_Delay(500);
+        HAL_Delay(1000);
     }
 }
