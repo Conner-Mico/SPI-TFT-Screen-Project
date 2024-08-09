@@ -65,3 +65,13 @@ void LEDOff(const LEDID_t ID)
 {
     HAL_GPIO_WritePin(LEDs[ID]->GPIOPtr, LEDs[ID]->GPIOInit.Pin, GPIO_PIN_RESET); // Set pin low
 }
+
+/**
+ * @brief 
+ * 
+ * @param LED 
+ */
+void LEDToggle(const LEDID_t ID)
+{
+    HAL_GPIO_TogglePin(LEDs[ID]->GPIOPtr, LEDs[ID]->GPIOInit.Pin, GPIO_PIN_RESET); // Toggle pin
+}
