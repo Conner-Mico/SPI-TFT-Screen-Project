@@ -46,7 +46,7 @@ add_subdirectory(src/app)
 add_subdirectory(src/debug)
 add_subdirectory(drivers/HAL)
 add_subdirectory(drivers/LL)
-
+add_subdirectory(third-party/FreeRTOSv10_0_0/)
 
 
 
