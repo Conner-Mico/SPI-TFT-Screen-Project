@@ -73,5 +73,5 @@ void LEDOff(const LEDID_t ID)
  */
 void LEDToggle(const LEDID_t ID)
 {
-    HAL_GPIO_TogglePin(LEDs[ID]->GPIOPtr, LEDs[ID]->GPIOInit.Pin, GPIO_PIN_RESET); // Toggle pin
+    HAL_GPIO_TogglePin(LEDs[ID]->GPIOPtr, LEDs[ID]->GPIOInit.Pin); // Toggle pin
 }

@@ -6,6 +6,6 @@
 void LEDsInit(void);
 void LEDOn(const LEDID_t ID);
 void LEDOff(const LEDID_t ID);
-void LEDtoggle(const LEDID_t ID);
+void LEDToggle(const LEDID_t ID);
 
 #endif
