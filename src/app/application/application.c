@@ -9,7 +9,7 @@
 void applicationInit(void)
 {
     HAL_Init();
-    assert(systemClocksConfig());
+    assert(!systemClocksConfig());
     LEDsInit();
 }
 
