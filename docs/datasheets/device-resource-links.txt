@@ -1,0 +1,19 @@
+This file is for storing useful links to things such as datasheet sources and manufacturer sites detailing the moduels used in this project.
+
+Nucleo Resources:
+
+	Nucleo p/n: NUCLEO-L476RG
+
+	Nucleo Webpage: https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
+
+	STM32L476RG IC Webpage: https://www.st.com/en/microcontrollers-microprocessors/stm32l476rg.html
+
+Temp Sensor Resources:
+
+	
+
+TFT-Display Resources:
+
+	
+
+	
