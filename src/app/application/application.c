@@ -1,3 +1,4 @@
+#include "assert.h"
 #include "LED_types.h"
 #include "clock.h"
 #include "application.h"
@@ -8,7 +9,7 @@
 void applicationInit(void)
 {
     HAL_Init();
-    systemClocksConfig();
+    assert(!systemClocksConfig());
     LEDsInit();
 }
 
@@ -17,6 +18,6 @@ void applicationRun(void)
 {
     while (1) {
         LEDToggle(LED_ID_BLINKY);
-        HAL_Delay(500);
+        HAL_Delay(1000);
     }
 }

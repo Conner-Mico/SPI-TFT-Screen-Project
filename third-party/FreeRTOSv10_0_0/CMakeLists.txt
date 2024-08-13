@@ -219,5 +219,4 @@ target_include_directories(freertos_kernel
 target_link_libraries(freertos_kernel
     PUBLIC
         $<$<TARGET_EXISTS:freertos_config>:freertos_config>
-        trice
 )
