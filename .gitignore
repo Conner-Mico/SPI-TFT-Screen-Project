@@ -30,8 +30,8 @@ docs/**/*.xml
 
 # Pictures
 *.png
-!_ota_discovery/images/*.png
-!_ota_discovery/diagrams/*.png
+!docs/notes/tft-display/*.png
+
 
 # Sourcetrail binary files
 *.srctrldb
