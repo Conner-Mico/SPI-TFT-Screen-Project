@@ -16,15 +16,34 @@ Temp Sensor Resources:
 
 	Breakout Module:
 		Mfr: Adafuit
-		p/n: MCP9808
-		Webpage: https://learn.adafruit.com/adafruit-mcp9808-precision-i2c-temperature-sensor-guide/downloads
+
+		Original Version P/N: 1782
+		Original Version Link:https://www.adafruit.com/product/1782
+
+		STEMMA QT Version P/N: 5027
+		STEMMA QT Version Link: https://www.adafruit.com/product/5027
+
+		Webpage: https://learn.adafruit.com/adafruit-mcp9808-precision-i2c-temperature-sensor-guide/overview
 		
-		- This module has two versions from Adafruit. 
-		- The newer version does not have external breakouts for adress setting pins. 
+		- This module has two versions from Adafruit, the original and STEMMA QT versions. 
+		- The SEMMA QT version does not have external breakouts for adress setting pins. 
 		- It instead contains solder jumpers to set these values with 10K pulldown resistors on non-jumped pins.
+		- STEMMA QT connector format is intended to be compativel with Sparkfun's Quiik connect system.
+			- Allows for making a quick I2C bus without soldered connections
 
 TFT-Display Resources:
 
-	
+	Module: 
+		Mfr: Adafruit
+		2.8" Capacitive Touch p/n: 2090 
+		Product Link: https://www.adafruit.com/product/2090
+
+		Resource Webpage: https://learn.adafruit.com/adafruit-2-8-and-3-2-color-tft-touchscreen-breakout-v2/overview
+
+CAD Resources:
+	Included in order to make a 3D printed enclosure when prototyping gets far enough along.
+
+	Adafruit_CAD_Parts repo: git@github.com:adafruit/Adafruit_CAD_Parts.git
+
 
 	
