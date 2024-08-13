@@ -10,7 +10,18 @@ Nucleo Resources:
 
 Temp Sensor Resources:
 
-	
+	Mfr: Microchip
+	P/N: MCP9808
+	Webpage: https://www.microchip.com/en-us/product/mcp9808
+
+	Breakout Module:
+		Mfr: Adafuit
+		p/n: MCP9808
+		Webpage: https://learn.adafruit.com/adafruit-mcp9808-precision-i2c-temperature-sensor-guide/downloads
+		
+		- This module has two versions from Adafruit. 
+		- The newer version does not have external breakouts for adress setting pins. 
+		- It instead contains solder jumpers to set these values with 10K pulldown resistors on non-jumped pins.
 
 TFT-Display Resources:
 
