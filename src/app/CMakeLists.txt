@@ -58,6 +58,9 @@ target_sources(
           main.c
           system/clock/clock.c
           application/application.c
+          temp-sensor/driver/MCP9808_driver.c
+          temp-sensor/manager/temp_sensor_manager.c
+          temp-sensor/module/temp_sensor_module.c
           LED/LED.c
 )
 
@@ -76,5 +79,8 @@ target_include_directories(
     gpio/
     system/clock/
     application/
+    temp-sensor/driver/
+    temp-sensor/manager/
+    temp-sensor/module/
     LED/
 )

@@ -1,6 +1,7 @@
 #ifndef TEMP_SENSOR_DRIVER_REGS_H
 #define TEMP_SENSOR_DRIVER_REGS_H
 
+#define MCP9808_REGISTER_POINTER                    0x00
 #define MCP9808_CONFIG_REGISTER                     0x01
 #define MCP9808_UPPER_TEMP_LIMIT_REGISTER           0x02
 #define MCP9808_LOWER_TEMP_LIMIT_REGISTER           0x03
