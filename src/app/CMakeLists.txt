@@ -29,6 +29,8 @@ set(APP_HEX
 
 add_executable(${APP_NAME})
 
+add_compile_definitions(USE_HAL_DRIVER RCC_PLLP_DIV_2_31_SUPPORT)
+
 target_compile_options(
   ${APP_NAME}
   PRIVATE -Wall
