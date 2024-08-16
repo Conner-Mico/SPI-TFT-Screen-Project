@@ -1,15 +1,15 @@
 # ##############################################################################
-# SAMD51P20A (Cortex-M4)  #
+# STM32L476RG (Cortex-M4)  #
 # ##############################################################################
 # ---------------------------------------------------------------- INCLUDE GUARD
 # CMake includes the toolchain file multiple times when configuring the build,
 # which causes errors for some flags (e.g., --specs=nano.specs). We prevent this
 # with an include guard.
-if(SAMD51P20A_TOOLCHAIN_INCLUDED)
+if(STM32L476RG_TOOLCHAIN_INCLUDED)
   return()
 endif()
 
-set(SAMD51P20A_TOOLCHAIN_INCLUDED true)
+set(STM32L476RG_TOOLCHAIN_INCLUDED true)
 
 # ------------------------------------------------ STM32L476RG SPECIFIC SETTINGS
 # Global compilation flag, added to every compilation unit
