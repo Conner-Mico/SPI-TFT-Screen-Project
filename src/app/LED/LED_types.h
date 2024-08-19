@@ -2,7 +2,7 @@
 #define LED_TYPES_H
 
 #include "gpio_types.h"
-#include "stm32l4xx_hal_gpio.h"
+#include "stm32l4xx_hal.h"
 
 typedef struct
 {
