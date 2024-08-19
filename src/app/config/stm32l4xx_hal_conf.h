@@ -24,6 +24,9 @@
 #ifndef STM32L4xx_HAL_CONF_H
 #define STM32L4xx_HAL_CONF_H
 
+#include <stdint.h>
+#include "stm32l4xx.h"
+
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -36,11 +39,11 @@
   * @brief This is the list of modules to be used in the HAL driver
   */
 #define HAL_MODULE_ENABLED
-/*#define HAL_ADC_MODULE_ENABLED   */
+/* #define HAL_ADC_MODULE_ENABLED */  
 /*#define HAL_CRYP_MODULE_ENABLED   */
 /*#define HAL_CAN_MODULE_ENABLED   */
 /*#define HAL_COMP_MODULE_ENABLED   */
-/*#define HAL_I2C_MODULE_ENABLED   */
+#define HAL_I2C_MODULE_ENABLED  
 /*#define HAL_CRC_MODULE_ENABLED   */
 /*#define HAL_CRYP_MODULE_ENABLED   */
 /*#define HAL_DAC_MODULE_ENABLED   */
@@ -86,7 +89,7 @@
 /*#define HAL_PSSI_MODULE_ENABLED   */
 #define HAL_GPIO_MODULE_ENABLED
 /* #define HAL_EXTI_MODULE_ENABLED */
-/* #define HAL_DMA_MODULE_ENABLED */
+#define HAL_DMA_MODULE_ENABLED
 #define HAL_RCC_MODULE_ENABLED
 #define HAL_FLASH_MODULE_ENABLED
 #define HAL_PWR_MODULE_ENABLED
