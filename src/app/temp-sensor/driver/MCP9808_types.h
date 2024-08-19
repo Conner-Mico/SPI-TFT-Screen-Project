@@ -1,9 +1,8 @@
 #ifndef MCP9808_TYPES_H
 #define MCP9808_TYPES_H
 
+//#include "stm32l4xx.h"
 #include <stdint.h>
-#include "MCP9808_driver.h"
-//#include "stm32l4xx_hal_i2c.h"
 
 typedef enum
 {
@@ -99,5 +98,8 @@ typedef struct
     uint8_t                             deviceID;
     uint8_t                             revision;
     uint8_t                             resolution;
+
+    //I2C_HandleTypeDef                   I2CHandle;
 } MCP9808_t;
+
 #endif
