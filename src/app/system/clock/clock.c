@@ -1,9 +1,6 @@
 #include <stdbool.h>
 #include "assert.h"
-#include "stm32l4xx_hal_def.h"
-#include "stm32l4xx_hal_pwr_ex.h"
-#include "stm32l4xx_hal_flash.h"
-#include "stm32l4xx_hal_rcc.h"
+#include "stm32l4xx_hal.h"
 #include "clock.h"
 #include "gpio_types.h"
 
