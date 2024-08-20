@@ -93,6 +93,7 @@ typedef struct
     MCP9808_TempLimit_t             lowerTemp;
     MCP9808_TempLimit_t             criticalTemp;
     MCP9808_AmbientTemperature_t    ambientTemp;
+    int16_t                         ambientTempActual;
     uint16_t                        manufacturerID;
     uint8_t                         deviceID;
     uint8_t                         revision;
