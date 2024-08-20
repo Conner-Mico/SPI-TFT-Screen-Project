@@ -26,9 +26,9 @@ void asserted(void);
 #define WAIT_TIMEOUT(_expr_, _timeout_)                     \
     {                                                       \
         unsigned int i;                                     \
-        for (i = 0; (_expr_) == true && i < _timeout_; i++) \
+        for (i = 0; (_expr_) == true && i < (_timeout_); i++) \
             ;                                               \
-        assert(i < _timeout_);                              \
+        assert(i < (_timeout_));                              \
     }
 
 #endif
