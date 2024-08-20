@@ -10,11 +10,11 @@ void asserted(void);
 
 // Trigger an assert if expression is false
 #define assert(_expr_)  \
-    {                      \
-        if (!(_expr_))     \
-        {                  \
+    {                   \
+        if (!(_expr_))  \
+        {               \
             asserted(); \
-        }                  \
+        }               \
     }
 #else
 #define assert(x)
@@ -28,7 +28,7 @@ void asserted(void);
         unsigned int i;                                     \
         for (i = 0; (_expr_) == true && i < _timeout_; i++) \
             ;                                               \
-        assert(i < _timeout_);                           \
+        assert(i < _timeout_);                              \
     }
 
 #endif

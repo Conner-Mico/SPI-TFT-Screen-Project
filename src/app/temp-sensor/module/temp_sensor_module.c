@@ -2,7 +2,7 @@
 #include "MCP9808_driver.h"
 #include <stddef.h>
 
-void tempSensorModuleInit(void)
+void tempSensorModuleInit (void)
 {
     MCP9808Init(NULL);
 }

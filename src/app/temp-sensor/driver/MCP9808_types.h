@@ -6,7 +6,7 @@
 
 typedef enum
 {
-    MCP9808_SIGN_START = 0,
+    MCP9808_SIGN_START    = 0,
     MCP9808_SIGN_POSITIVE = MCP9808_SIGN_START,
     MCP9808_SIGN_NEGATIVE,
     MCP9808_SIGN_NUM,
@@ -16,7 +16,7 @@ typedef enum
 typedef enum
 {
     MCP9808_RESOLUTION_START = 0,
-    MCP9808_RESOLUTION_ = MCP9808_RESOLUTION_START,
+    MCP9808_RESOLUTION_      = MCP9808_RESOLUTION_START,
     MCP9808_RESOLUTION_0_5_CELSIUS,
     MCP9808_RESOLUTION_0_25_CELSIUS,
     MCP9808_RESOLUTION_0_125_CELSIUS,
@@ -41,22 +41,22 @@ typedef enum
 
 typedef union
 {
-    struct 
+    struct
     {
-        uint16_t                                : 5;
-        uint16_t hysteresis                     : 2;
-        uint16_t shutdown                       : 1;
-        uint16_t criticalTempRegLock            : 1;
-        uint16_t upperLowerTempWindowRegLock    : 1; 
-        uint16_t interruptClear                 : 1;
-        uint16_t alertOutputStatus              : 1;
-        uint16_t alertOutputControl             : 1; 
-        uint16_t alertOutputSelect              : 1;
-        uint16_t alertOutputPolarity            : 1;
-        uint16_t alertOutputMode                : 1;
+        uint16_t                             : 5;
+        uint16_t hysteresis                  : 2;
+        uint16_t shutdown                    : 1;
+        uint16_t criticalTempRegLock         : 1;
+        uint16_t upperLowerTempWindowRegLock : 1;
+        uint16_t interruptClear              : 1;
+        uint16_t alertOutputStatus           : 1;
+        uint16_t alertOutputControl          : 1;
+        uint16_t alertOutputSelect           : 1;
+        uint16_t alertOutputPolarity         : 1;
+        uint16_t alertOutputMode             : 1;
     };
     uint16_t config;
-    
+
 } MCP9808_ConfigRegister_Config_t;
 
 typedef union
@@ -68,7 +68,7 @@ typedef union
         uint16_t tempLimitReg : 10;
         uint16_t              : 2;
     };
-    
+
     uint16_t tempLimit;
 } MCP9808_TempLimit_t;
 
@@ -83,7 +83,7 @@ typedef union
         uint16_t ambientTemp        : 12;
     };
     uint16_t ambientTemperature;
-    
+
 } MCP9808_AmbientTemperature_t;
 
 typedef struct
@@ -99,7 +99,7 @@ typedef struct
     uint8_t                         revision;
     uint8_t                         resolution;
 
-    I2C_HandleTypeDef               I2CHandle;
+    I2C_HandleTypeDef I2CHandle;
 } MCP9808_t;
 
 #endif

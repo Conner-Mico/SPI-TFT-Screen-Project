@@ -1,28 +1,31 @@
-#include <stdbool.h>
-#include "assert.h"
-#include "stm32l4xx_hal.h"
 #include "clock.h"
+#include "assert.h"
 #include "gpio_types.h"
+#include "stm32l4xx_hal.h"
+#include <stdbool.h>
 
-static RCC_OscInitTypeDef RCC_OscInit = { .OscillatorType       = RCC_OSCILLATORTYPE_HSI,
-                                          .HSIState             = RCC_HSI_ON,
-                                          .HSICalibrationValue  = RCC_HSICALIBRATION_DEFAULT,
-                                          .PLL.PLLState         = RCC_PLL_ON,
-                                          .PLL.PLLSource        = RCC_PLLSOURCE_HSI,
-                                          .PLL.PLLM             = 1,
-                                          .PLL.PLLN             = 10,
-                                          .PLL.PLLP             = RCC_PLLP_DIV7,
-                                          .PLL.PLLQ             = RCC_PLLQ_DIV2,
-                                          .PLL.PLLR             = RCC_PLLR_DIV2,
-                                        };
+static RCC_OscInitTypeDef RCC_OscInit = {
+    .OscillatorType      = RCC_OSCILLATORTYPE_HSI,
+    .HSIState            = RCC_HSI_ON,
+    .HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT,
+    .PLL.PLLState        = RCC_PLL_ON,
+    .PLL.PLLSource       = RCC_PLLSOURCE_HSI,
+    .PLL.PLLM            = 1,
+    .PLL.PLLN            = 10,
+    .PLL.PLLP            = RCC_PLLP_DIV7,
+    .PLL.PLLQ            = RCC_PLLQ_DIV2,
+    .PLL.PLLR            = RCC_PLLR_DIV2,
+};
 
-static RCC_ClkInitTypeDef RCC_ClkInit = { .ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2,
-                                          .SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK,
-                                          .AHBCLKDivider = RCC_SYSCLK_DIV1,
-                                          .APB1CLKDivider = RCC_HCLK_DIV1,
-                                          .APB2CLKDivider = RCC_HCLK_DIV1,};
+static RCC_ClkInitTypeDef RCC_ClkInit = {
+    .ClockType      = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2,
+    .SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK,
+    .AHBCLKDivider  = RCC_SYSCLK_DIV1,
+    .APB1CLKDivider = RCC_HCLK_DIV1,
+    .APB2CLKDivider = RCC_HCLK_DIV1,
+};
 
-HAL_StatusTypeDef systemClocksConfig(void)
+HAL_StatusTypeDef systemClocksConfig (void)
 {
     __HAL_RCC_SYSCFG_CLK_ENABLE();
     __HAL_RCC_PWR_CLK_ENABLE();
@@ -45,7 +48,7 @@ HAL_StatusTypeDef systemClocksConfig(void)
     return HAL_OK;
 }
 
-static bool RCC_Clock_CheckIfEnabled(const GPIOx_t GPIOx)
+static bool RCC_Clock_CheckIfEnabled (const GPIOx_t GPIOx)
 {
     bool res;
 
@@ -80,7 +83,7 @@ static bool RCC_Clock_CheckIfEnabled(const GPIOx_t GPIOx)
         case GPIO_G:
             res = __HAL_RCC_GPIOG_IS_CLK_ENABLED();
             break;
-            
+
         default:
             res = false;
             break;
@@ -89,7 +92,7 @@ static bool RCC_Clock_CheckIfEnabled(const GPIOx_t GPIOx)
     return res;
 }
 
-void RCC_GPIO_ClockInit(const GPIOx_t GPIOx)
+void RCC_GPIO_ClockInit (const GPIOx_t GPIOx)
 {
     GOTO_EXIT_IF_TRUE(RCC_Clock_CheckIfEnabled(GPIOx));
 
@@ -129,5 +132,4 @@ void RCC_GPIO_ClockInit(const GPIOx_t GPIOx)
 
 exit:
     return;
-
 }
