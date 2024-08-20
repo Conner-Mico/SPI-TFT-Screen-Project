@@ -1,7 +1,7 @@
 #ifndef MCP9808_TYPES_H
 #define MCP9808_TYPES_H
 
-//#include "stm32l4xx.h"
+#include "stm32l4xx_hal.h"
 #include <stdint.h>
 
 typedef enum
@@ -39,67 +39,66 @@ typedef enum
     MCP9808_WRITE_POINTER_INVALID,
 } MCP9808_WritePointer_t;
 
-typedef struct
+typedef union
 {
-    uint16_t                                : 5;
-    uint16_t hysteresis                     : 2;
-    uint16_t shutdown                       : 1;
-    uint16_t criticalTempRegLock            : 1;
-    uint16_t upperLowerTempWindowRegLock    : 1; 
-    uint16_t interruptClear                 : 1;
-    uint16_t alertOutputStatus              : 1;
-    uint16_t alertOutputControl             : 1; 
-    uint16_t alertOutputSelect              : 1;
-    uint16_t alertOutputPolarity            : 1;
-    uint16_t alertOutputMode                : 1;
+    struct 
+    {
+        uint16_t                                : 5;
+        uint16_t hysteresis                     : 2;
+        uint16_t shutdown                       : 1;
+        uint16_t criticalTempRegLock            : 1;
+        uint16_t upperLowerTempWindowRegLock    : 1; 
+        uint16_t interruptClear                 : 1;
+        uint16_t alertOutputStatus              : 1;
+        uint16_t alertOutputControl             : 1; 
+        uint16_t alertOutputSelect              : 1;
+        uint16_t alertOutputPolarity            : 1;
+        uint16_t alertOutputMode                : 1;
+    };
+    uint16_t config;
+    
 } MCP9808_ConfigRegister_Config_t;
 
-typedef struct
+typedef union
 {
-    uint16_t                    : 3;
-    uint16_t sign               : 1;
-    uint16_t temperatureLimit   : 10;
-    uint16_t                    : 2;
-} MCP9808_UpperTemperatureLimit_t;
+    struct
+    {
+        uint16_t              : 3;
+        uint16_t sign         : 1;
+        uint16_t tempLimitReg : 10;
+        uint16_t              : 2;
+    };
+    
+    uint16_t tempLimit;
+} MCP9808_TempLimit_t;
 
-typedef struct
+typedef union
 {
-    uint16_t                    : 3;
-    uint16_t sign               : 1;
-    uint16_t temperatureLimit   : 10;
-    uint16_t                    : 2;
-} MCP9808_LowerTemperatureLimit_t;
-
-typedef struct
-{
-    uint16_t                    : 3;
-    uint16_t sign               : 1;
-    uint16_t temperatureLimit   : 10;
-    uint16_t                    : 2;
-} MCP9808_CriticalTemperatureLimit_t;
-
-typedef struct
-{
-    uint16_t ambientVsCritTemp  : 1;
-    uint16_t ambientVsUpperTemp : 1;
-    uint16_t ambientVsLowerTemp : 1;
-    uint16_t sign               : 1;
-    uint16_t ambientTemperature : 12;
+    struct
+    {
+        uint16_t ambientVsCritTemp  : 1;
+        uint16_t ambientVsUpperTemp : 1;
+        uint16_t ambientVsLowerTemp : 1;
+        uint16_t sign               : 1;
+        uint16_t ambientTemp        : 12;
+    };
+    uint16_t ambientTemperature;
+    
 } MCP9808_AmbientTemperature_t;
 
 typedef struct
 {
-    MCP9808_ConfigRegister_Config_t     config;
-    MCP9808_UpperTemperatureLimit_t     upperTemp;
-    MCP9808_LowerTemperatureLimit_t     LowerTemp;
-    MCP9808_CriticalTemperatureLimit_t  criticalTemp;
-    MCP9808_AmbientTemperature_t        ambientTemp;
-    uint16_t                            manufacturerID;
-    uint8_t                             deviceID;
-    uint8_t                             revision;
-    uint8_t                             resolution;
+    MCP9808_ConfigRegister_Config_t config;
+    MCP9808_TempLimit_t             upperTemp;
+    MCP9808_TempLimit_t             lowerTemp;
+    MCP9808_TempLimit_t             criticalTemp;
+    MCP9808_AmbientTemperature_t    ambientTemp;
+    uint16_t                        manufacturerID;
+    uint8_t                         deviceID;
+    uint8_t                         revision;
+    uint8_t                         resolution;
 
-    //I2C_HandleTypeDef                   I2CHandle;
+    I2C_HandleTypeDef               I2CHandle;
 } MCP9808_t;
 
 #endif
