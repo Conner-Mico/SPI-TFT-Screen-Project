@@ -115,7 +115,6 @@ git-is-clean:
 .PHONY: format-all
 format-all: have-clang-19 git-is-clean
 	@git ls-files -- 'src/**' | grep -E '\.(c|h)$$' | xargs clang-format-19 --style=file:./.clang-format -i
-	@git ls-files | grep -E '(CMake|\.cmake)' | xargs cmake-format -i
 	@echo "If happy with the changes you can amend your last commit with git commit -a --amend --no-edit to apply changes without an new commit"
 
 .PHONY: have-clang-19
