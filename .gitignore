@@ -32,16 +32,12 @@ docs/**/*.xml
 *.png
 !docs/notes/tft-display/*.png
 
-
 # Sourcetrail binary files
 *.srctrldb
 *.srctrlbm
 
 # Mac OS
 *.DS_Store
-
-# clang configs
-.clang*
 
 # devbox
 devbox.lock

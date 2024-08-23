@@ -29,6 +29,8 @@ set(APP_HEX
 
 add_executable(${APP_NAME})
 
+add_compile_definitions(USE_HAL_DRIVER RCC_PLLP_DIV_2_31_SUPPORT)
+
 target_compile_options(
   ${APP_NAME}
   PRIVATE -Wall
@@ -58,6 +60,9 @@ target_sources(
           main.c
           system/clock/clock.c
           application/application.c
+          temp-sensor/driver/MCP9808_driver.c
+          temp-sensor/manager/temp_sensor_manager.c
+          temp-sensor/module/temp_sensor_module.c
           LED/LED.c
 )
 
@@ -76,5 +81,8 @@ target_include_directories(
     gpio/
     system/clock/
     application/
+    temp-sensor/driver/
+    temp-sensor/manager/
+    temp-sensor/module/
     LED/
 )

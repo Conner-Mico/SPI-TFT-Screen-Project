@@ -1,0 +1,6 @@
+CompileFlags:
+  Add: -I/usr/include/newlib
+  Remove: -fdump-ipa-cgraph
+  Compiler: arm-none-eabi-gcc
+  CompilationDatabase: build_debug
+  CompilationDatabase: build_tests/artifacts

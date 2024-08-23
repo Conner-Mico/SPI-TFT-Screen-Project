@@ -110,7 +110,7 @@
  * @brief Avoid unused variable warnings
  *
  */
-#define UNUSED_ASSERT(_x_) ((void)_x_)
+#define UNUSED_ASSERT(_x_) ((void)(_x_))
 
 // These macros allow simultaneous creation of an enum and a string
 // array matching those enums with both deriving from the same place.

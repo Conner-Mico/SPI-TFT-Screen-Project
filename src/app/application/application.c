@@ -1,12 +1,12 @@
-#include "assert.h"
-#include "LED_types.h"
-#include "clock.h"
 #include "application.h"
 #include "LED.h"
+#include "LED_types.h"
+#include "assert.h"
+#include "clock.h"
 #include "stm32l4xx_hal.h"
 
 // application init function definition
-void applicationInit(void)
+void applicationInit (void)
 {
     HAL_Init();
     assert(!systemClocksConfig());
@@ -14,9 +14,10 @@ void applicationInit(void)
 }
 
 // application run function definition
-void applicationRun(void)
+void applicationRun (void)
 {
-    while (1) {
+    while (1)
+    {
         LEDToggle(LED_ID_BLINKY);
         HAL_Delay(1000);
     }

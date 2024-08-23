@@ -114,8 +114,7 @@ git-is-clean:
 
 .PHONY: format-all
 format-all: have-clang-19 git-is-clean
-	@git ls-files -- 'src/**' | grep -E '\.(c|h)$$' | xargs clang-format-19 --style=file:knowledge_base/coding/.clang-format -i
-	@git ls-files | grep -E '(CMake|\.cmake)' | xargs cmake-format -i
+	@git ls-files -- 'src/**' | grep -E '\.(c|h)$$' | xargs clang-format-19 --style=file:./.clang-format -i
 	@echo "If happy with the changes you can amend your last commit with git commit -a --amend --no-edit to apply changes without an new commit"
 
 .PHONY: have-clang-19
@@ -134,12 +133,6 @@ get-clang:
 .PHONY: flash
 flash: build
 	cmake --build build_debug --target flash
-
-#Works like flash, but to a specific serial number on JTAG. (For now, it is just
-#set to Garet's HIL locator, but will allow you to input serial number in future)
-.PHONY: flashSerial
-flashSerial: build
-	cmake --build build_debug --target flashSerial
 
 # This target is like flash, but stops execution at program start
 .PHONY: debug
@@ -175,13 +168,13 @@ git-clean:
 
 .PHONY: clang-tidy
 clang-tidy:
-	./knowledge_base/scripts/parse_compile_commands_for_clang.py ./build_debug/compile_commands.json
+	./parse_compile_commands_for_clang.py ./build_debug/compile_commands.json
 	mv ./build_debug/compile_commands.json.mod ./build_debug/compile_commands.json
-	set -o pipefail && /usr/lib/llvm-19/bin/run-clang-tidy -j `nproc --all` -use-color -extra-arg=-Wno-implicit-function-declaration -config-file ./knowledge_base/.clang-tidy -p build_debug -source-filter `pwd`/src/ -header-filter `pwd`/src/ 2>/dev/null | grep -v clang-tidy
+	set -o pipefail && /usr/lib/llvm-19/bin/run-clang-tidy -j `nproc --all` -use-color -extra-arg=-Wno-implicit-function-declaration -config-file ./.clang-tidy -p build_debug -source-filter `pwd`/src/ -header-filter `pwd`/src/ 2>/dev/null | grep -v clang-tidy
 
 .PHONY: clang-tidy-fix
 clang-tidy-fix: git-is-clean
-	./knowledge_base/scripts/parse_compile_commands_for_clang.py ./build_debug/compile_commands.json
+	./parse_compile_commands_for_clang.py ./build_debug/compile_commands.json
 	mv ./build_debug/compile_commands.json.mod ./build_debug/compile_commands.json
 	/usr/lib/llvm-19/bin/run-clang-tidy -j `nproc --all` -fix -use-color -extra-arg=-Wno-implicit-function-declaration -config-file ./knowledge_base/.clang-tidy -p build_debug -source-filter `pwd`/src/ -header-filter `pwd`/src/ 2>/dev/null
 	@echo "If happy with the changes you can ammend your last commit with git commit --ammend --no-edit to apply changes without a new commit"

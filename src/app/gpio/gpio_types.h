@@ -4,7 +4,7 @@
 typedef enum
 {
     GPIO_START = 0,
-    GPIO_A = GPIO_START,
+    GPIO_A     = GPIO_START,
     GPIO_B,
     GPIO_C,
     GPIO_D,

@@ -1,10 +1,9 @@
 #include "application.h"
 
-
-int main(void)
+int main (void)
 {
     applicationInit();
     applicationRun();
-    
+
     return 0;
 }
