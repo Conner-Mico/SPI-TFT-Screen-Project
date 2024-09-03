@@ -48,6 +48,15 @@ const uint8_t RELEASE_CODE_ID = 0xAF; //Release code version
 
 const uint8_t STATE = 0xBC; //Current operating mode
 
+//Device ID's
+const uint8_t FT6206_VENDID = 0x11;
+const uint8_t FT6206_CHIPID = 0x06;
+
+//I2C Bus Addresses
+const uint8_t FT6206_BASE_ADDRESS = 0x38; //Pulled from Adafruit's circuit python library. Needs confirmation. Could not find address in FT6206 datasheet. 
+const uint8_t FT6206_READ_ADDRESS = (FT6206_BASE_ADDRESS << 1) | 0x01;
+const uint8_t FT6206_WRITE_ADDRESS = FT6206_BASE_ADDRESS << 1;
+
 //Function Prototypes
 void FT6206Init(const FT6206_t *FT6206_handle);
 void FT6202_configRegisterWrite(const FT6206_t *FT6206_handle);
